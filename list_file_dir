@@ -1,0 +1,18 @@
+#!/usr/bin/python3
+import os
+import math
+from colorama import Fore,Style,init
+
+init(autoreset=True)
+
+list_file = os.listdir(os.curdir)
+
+def listing(file_ex):
+	for file in file_ex:
+		if os.path.isfile(file):		
+			print (file,end='')
+			print (Fore.BLUE + '--[FILE]')
+		elif os.path.isdir(file):
+			print (file , end='') 
+			print (Fore.GREEN +'--[DIR]')
+listing(list_file)
